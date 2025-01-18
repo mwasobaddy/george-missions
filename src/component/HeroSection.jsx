@@ -36,10 +36,10 @@ const HeroSection = () => {
                             Join us in our mission to share God's love and make a lasting impact in communities worldwide.
                         </p>
                         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                            <button className="bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700">
+                            <button className="w-fit bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700">
                                 Support Our Mission
                             </button>
-                            <button className="text-orange-600 border-2 border-orange-600 px-8 py-3 rounded-full hover:bg-orange-50">
+                            <button className="w-fit text-orange-600 border-2 border-orange-600 px-8 py-3 rounded-full hover:bg-orange-50">
                                 Learn More
                             </button>
                         </div>
