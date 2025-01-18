@@ -35,7 +35,7 @@ const HeroSection = () => {
                         <p className="mt-6 text-xl text-gray-800 max-w-3xl font-semibold">
                             Join us in our mission to share God's love and make a lasting impact in communities worldwide.
                         </p>
-                        <div className="mt-10 flex sm:flex-col gap-4">
+                        <div className="mt-10 flex flex-col sm:flex-row gap-4">
                             <button className="bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700">
                                 Support Our Mission
                             </button>
