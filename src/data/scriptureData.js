@@ -1,0 +1,33 @@
+const scriptures = [
+    { verse: "For I know the plans I have for you...", reference: "Jeremiah 29:11" },
+    { verse: "Each of you should give what you have decided in your heart to give...", reference: "2 Corinthians 9:7" },
+    { verse: "Give, and it will be given to you...", reference: "Luke 6:38" },
+    { verse: "Honor the Lord with your wealth...", reference: "Proverbs 3:9" },
+    { verse: "Bring the whole tithe into the storehouse...", reference: "Malachi 3:10" },
+    { verse: "For where your treasure is, there your heart will be also...", reference: "Matthew 6:21" },
+    { verse: "It is more blessed to give than to receive...", reference: "Acts 20:35" },
+    { verse: "A generous person will prosper...", reference: "Proverbs 11:25" },
+    { verse: "For if the willingness is there, the gift is acceptable...", reference: "2 Corinthians 8:12" },
+    { verse: "Command them to do good, to be rich in good deeds...", reference: "1 Timothy 6:18" },
+    { verse: "And do not forget to do good and to share with others...", reference: "Hebrews 13:16" },
+    { verse: "Whoever is kind to the poor lends to the Lord...", reference: "Proverbs 19:17" },
+    { verse: "Freely you have received; freely give...", reference: "Matthew 10:8" },
+    { verse: "Sell your possessions and give to the poor...", reference: "Luke 12:33" },
+    { verse: "You will be enriched in every way so that you can be generous...", reference: "2 Corinthians 9:11" },
+    { verse: "The people rejoiced at the willing response of their leaders...", reference: "1 Chronicles 29:9" },
+    { verse: "Give generously to them and do so without a grudging heart...", reference: "Deuteronomy 15:10" },
+    { verse: "Good will come to those who are generous and lend freely...", reference: "Psalm 112:5" },
+    { verse: "The generous will themselves be blessed...", reference: "Proverbs 22:9" },
+    { verse: "But since you excel in everything... see that you also excel in this grace of giving...", reference: "2 Corinthians 8:7" },
+    { verse: "Let us not become weary in doing good, for at the proper time we will reap a harvest...", reference: "Galatians 6:9" },
+    { verse: "For God so loved the world...", reference: "John 3:16" },
+    { verse: "The Lord is my shepherd...", reference: "Psalm 23:1" },
+    { verse: "I can do all things...", reference: "Philippians 4:13" },
+    { verse: "And we know that in all things...", reference: "Romans 8:28" },
+    // Add more verses as needed
+];
+
+const randomIndex = Math.floor(Math.random() * scriptures.length);
+const currentScripture = scriptures[randomIndex];
+
+export { currentScripture };
