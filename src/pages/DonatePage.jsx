@@ -30,9 +30,10 @@ const DonatePage = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-12">
+        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-24">
             <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">Donate Now</h2>
+                <h2 className="text-lg font-bold text-center text-gray-900 mb-2">Select Donation Method</h2>
                 <div className="flex justify-center space-x-4 mb-8">
                     {['paypal', 'visa', 'mastercard'].map((method) => (
                         <button 
@@ -44,7 +45,8 @@ const DonatePage = () => {
                         </button>
                     ))}
                 </div>
-                <div className="flex flex-col items-center gap-4 justify-center space-x-4 space-y-4 mb-8">
+                <h2 className="text-lg font-bold text-center text-gray-900 mb-2">Choose Donation Amount</h2>
+                <div className="flex flex-col items-center gap-4 justify-center space-x-4 mb-8">
                     <div className="flex justify-center flex-wrap space-x-4">
                         {[25, 50, 100, 150, 250].map((amt) => (
                             <button 
@@ -59,7 +61,7 @@ const DonatePage = () => {
                     <div className="flex flex-col justify-center space-y-4">
                         <label className="block text-sm font-medium text-gray-700">Enter Custom Amount</label>
                         <input 
-                            type="number" 
+                            type="text" 
                             className="px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-600 transition-colors duration-300" 
                             placeholder="Custom Amount" 
                             value={amount} 

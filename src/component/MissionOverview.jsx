@@ -24,7 +24,14 @@ const MissionOverview = () => {
         <div ref={missionRef} id="mission" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
+                    <h2 className="text-3xl font-bold text-center mb-8 after">
+                        <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
+                            <span class="relative text-white">Our</span>
+                        </span>
+                        <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gray-600 relative inline-block">
+                            <span class="relative text-white">Mission</span>
+                        </span>
+                    </h2>
                     <p className="mt-4 text-xl text-gray-500">
                         Transforming lives through faith, service, and community building by spreading hope around the world and locally.
                         Our mission is to reach those in need, support communities, and build lasting relationships through faith and service. We envision a world where the Gospel is accessible to everyone, fostering communities of hope and love.

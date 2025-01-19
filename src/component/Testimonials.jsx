@@ -34,7 +34,14 @@ const Testimonials = () => {
     return (
         <div ref={testimonialsRef} id="testimonials" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-center mb-16">Impact Stories</h2>
+                <h2 className="text-3xl font-bold text-center mb-16 after">
+                    <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
+                        <span class="relative text-white">Impact</span>
+                    </span>
+                    <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gray-600 relative inline-block">
+                        <span class="relative text-white">Stories</span>
+                    </span>
+                </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {updates.map((update, index) => (
                         <div key={index} className="bg-orange-50 p-8 rounded-lg">

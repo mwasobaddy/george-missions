@@ -23,7 +23,17 @@ const DonationHighlights = () => {
         <div ref={donationRef} className="bg-orange-50 py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold">Support Our Mission</h2>
+                    <h2 className="text-3xl font-bold text-center after">
+                        <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
+                            <span class="relative text-white">Support</span>
+                        </span>
+                        <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gray-600 relative inline-block">
+                            <span class="relative text-white">Our</span>
+                        </span>
+                        <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
+                            <span class="relative text-white">Mission</span>
+                        </span>
+                    </h2>
                     <p className="mt-4 text-xl text-gray-500">
                         Your generous support helps us continue our work
                     </p>
