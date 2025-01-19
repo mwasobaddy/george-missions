@@ -55,7 +55,7 @@ const LatestUpdates = () => {
         const slides = [];
         for (let i = 0; i < updates.length; i += 2) {
             slides.push(
-                <div key={i} className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                <div key={i} className="flex flex-col w-full mb-8 md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
                     {updates[i] && (
                         <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full md:w-1/2">
                             <div className="h-[50vh]">
