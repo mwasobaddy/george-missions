@@ -44,12 +44,12 @@ const DonatePage = () => {
                         </button>
                     ))}
                 </div>
-                <div className="flex flex-col items-center gap-4 justify-center space-x-4 mb-8">
+                <div className="flex flex-col items-center gap-4 justify-center space-x-4 space-y-4 mb-8">
                     <div className="flex justify-center flex-wrap space-x-4">
                         {[25, 50, 100, 150, 250].map((amt) => (
                             <button 
                                 key={amt}
-                                className={`px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${amount === amt ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700'}`} 
+                                className={`mt-4 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${amount === amt ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700'}`} 
                                 onClick={() => setAmount(amt)}
                             >
                                 ${amt}
