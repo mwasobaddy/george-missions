@@ -1,9 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { currentScripture } from '../data/scriptureData';
+import { scriptures } from '../data/scriptureData';
+
+const getRandomScripture = () => {
+    const randomIndex = Math.floor(Math.random() * scriptures.length);
+    return scriptures[randomIndex];
+};
 
 const ScriptureLoader = () => {
+    const [currentScripture, setCurrentScripture] = useState(getRandomScripture());
     const scriptureRef = useRef(null);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentScripture(getRandomScripture());
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         if (scriptureRef.current) {
@@ -14,7 +28,7 @@ const ScriptureLoader = () => {
         } else {
             console.error('Scripture element not found');
         }
-    }, []);
+    }, [currentScripture]);
 
     return (
         <div ref={scriptureRef} className="bg-orange-600 text-white py-16">

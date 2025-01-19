@@ -27,7 +27,4 @@ const scriptures = [
     // Add more verses as needed
 ];
 
-const randomIndex = Math.floor(Math.random() * scriptures.length);
-const currentScripture = scriptures[randomIndex];
-
-export { currentScripture };
+export { scriptures };
