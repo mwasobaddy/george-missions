@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { Gift } from 'lucide-react';
+import { Gift, Plus } from 'lucide-react';
 
 // DonationHighlights Section
 
@@ -29,10 +29,26 @@ const DonationHighlights = () => {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div className="bg-orange-600 p-8 rounded-lg text-center shadow-lg">
+                        <div className="flex flex-col items-center mb-4">
+                            <Plus className="w-12 h-12 text-gray-50 border border-dashed border-gray-50 rounded-2xl" />
+                            <div className="text-3xl font-bold text-gray-50">Enter Custom Amount</div>
+                        </div>
+                        <div className="flex items-center justify-center">
+                            <Gift className="w-8 h-8 text-gray-50 gap-4" />
+                            <p className="text-gray-100">click to donate custom amount</p>
+                        </div>
+                        <button className="mt-6 w-fit bg-gray-50 text-orange-600 px-6 py-2 rounded-full hover:bg-gray-100">
+                            Donate Now
+                        </button>
+                    </div>
                     {[
-                        { amount: "25", description: "Provides Bibles for a family" },
-                        { amount: "50", description: "Supports community outreach" },
-                        { amount: "100", description: "Funds missionary training" }
+                        { amount: "25", description: "Provides Food and Biles for a family" },
+                        { amount: "50", description: "Funds missionary training" },
+                        { amount: "100", description: "Fund a medical mission trip to a remote village" },
+                        { amount: "150", description: "Sponsor a child's education in a developing country" },
+                        { amount: "250", description: "Support the construction of a community center" },
                     ].map((item, index) => (
                         <div key={index} className="bg-white p-8 rounded-lg text-center shadow-lg">
                             <div className="flex justify-center mb-4">

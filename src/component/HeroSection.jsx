@@ -25,7 +25,7 @@ const HeroSection = () => {
             className="relative overflow-hidden bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-            <div className="bg-orange-200/50 pt-16 pb-32">
+            <div className="backdrop-blur-sm bg-orange-200/50 pt-16 pb-32">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative z-10 pt-20 pb-12 sm:pt-24 lg:pt-32">
                         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
