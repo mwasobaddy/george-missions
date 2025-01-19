@@ -25,7 +25,8 @@ const MissionOverview = () => {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
                     <p className="mt-4 text-xl text-gray-500">
-                        Transforming lives through faith, service, and community building
+                        Transforming lives through faith, service, and community building by spreading hope around the world and locally.
+                        Our mission is to reach those in need, support communities, and build lasting relationships through faith and service. We envision a world where the Gospel is accessible to everyone, fostering communities of hope and love.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

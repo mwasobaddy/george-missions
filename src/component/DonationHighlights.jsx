@@ -40,7 +40,7 @@ const DonationHighlights = () => {
                             </div>
                             <div className="text-3xl font-bold text-orange-600">${item.amount}</div>
                             <p className="mt-2 text-gray-600">{item.description}</p>
-                            <button className="mt-6 w-full bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
+                            <button className="mt-6 w-fit bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
                                 Donate Now
                             </button>
                         </div>
