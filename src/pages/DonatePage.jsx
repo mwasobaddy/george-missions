@@ -45,7 +45,7 @@ const DonatePage = () => {
                     ))}
                 </div>
                 <div className="flex flex-col items-center gap-4 justify-center space-x-4 mb-8">
-                    <div className="flex justify-center space-x-4">
+                    <div className="flex justify-center flex-wrap space-x-4">
                         {[25, 50, 100, 150, 250].map((amt) => (
                             <button 
                                 key={amt}
