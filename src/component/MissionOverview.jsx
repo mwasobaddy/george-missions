@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Globe, Users, Heart, Book } from 'lucide-react';
+import CountUp from 'react-countup';
 
 // Mission Overview Section with Stats
 
@@ -31,10 +32,10 @@ const MissionOverview = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {[
-                        { icon: <Globe className="w-8 h-8 text-orange-600" />, stat: "12+", label: "Countries Served" },
-                        { icon: <Users className="w-8 h-8 text-orange-600" />, stat: "10,000+", label: "Lives Impacted" },
-                        { icon: <Heart className="w-8 h-8 text-orange-600" />, stat: "50+", label: "Active Projects" },
-                        { icon: <Book className="w-8 h-8 text-orange-600" />, stat: "1,000+", label: "Bibles Distributed" }
+                        { icon: <Globe className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={12} duration={15} />+</>, label: "Countries Served" },
+                        { icon: <Users className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={10000} duration={15} />+</>, label: "Lives Impacted" },
+                        { icon: <Heart className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={50} duration={15} />+</>, label: "Active Projects" },
+                        { icon: <Book className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={1000} duration={15} />+</>, label: "Bibles Distributed" }
                     ].map((item, index) => (
                         <div key={index} className="text-center p-6 bg-orange-50 rounded-lg">
                             <div className="flex justify-center mb-4">{item.icon}</div>
