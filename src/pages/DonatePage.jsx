@@ -44,23 +44,28 @@ const DonatePage = () => {
                         </button>
                     ))}
                 </div>
-                <div className="flex justify-center space-x-4 mb-8">
-                    {[25, 50, 100, 150, 250].map((amt) => (
-                        <button 
-                            key={amt}
-                            className={`px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${amount === amt ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700'}`} 
-                            onClick={() => setAmount(amt)}
-                        >
-                            ${amt}
-                        </button>
-                    ))}
-                    <input 
-                        type="number" 
-                        className="px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-600 transition-colors duration-300" 
-                        placeholder="Custom Amount" 
-                        value={amount} 
-                        onChange={(e) => setAmount(Number(e.target.value))}
-                    />
+                <div className="flex flex-col items-center gap-4 justify-center space-x-4 mb-8">
+                    <div className="flex justify-center space-x-4">
+                        {[25, 50, 100, 150, 250].map((amt) => (
+                            <button 
+                                key={amt}
+                                className={`px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${amount === amt ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700'}`} 
+                                onClick={() => setAmount(amt)}
+                            >
+                                ${amt}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="flex flex-col justify-center space-y-4">
+                        <label className="block text-sm font-medium text-gray-700">Enter Custom Amount</label>
+                        <input 
+                            type="number" 
+                            className="px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-600 transition-colors duration-300" 
+                            placeholder="Custom Amount" 
+                            value={amount} 
+                            onChange={(e) => setAmount(Number(e.target.value))}
+                        />
+                    </div>
                 </div>
                 <div ref={contentRef} className="bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
                     {renderContent()}
