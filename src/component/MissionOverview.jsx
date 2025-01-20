@@ -16,7 +16,7 @@ const MissionOverview = () => {
                 { opacity: 1, x: 0, duration: 1, delay: 0.5 }
             );
         } else {
-            console.error('Scripture element not found');
+            console.error('MissionOverview element not found');
         }
     }, []);
 

@@ -76,7 +76,7 @@ const AboutUs = () => {
 
     return (
         <section className="mb-16">
-            <h2 ref={el => titleRef.current[0] = el} className="text-3xl font-bold text-center mb-8 after">
+            <h2 ref={el => titleRef.current[0] = el} data-axis="y" className="text-3xl font-bold text-center mb-8 after">
                 <span className="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
                     <span className="relative text-white">About</span>
                 </span>
@@ -88,7 +88,7 @@ const AboutUs = () => {
                 George Missionary is a dedicated team led by George and committed to making a positive impact in our community and beyond. Our mission is to provide support, guidance, and resources to those in need through various outreach programs and initiatives.
             </p>
             <div className="roadmap">
-                <h3 ref={el => titleRef.current[1] = el} className="text-2xl font-semibold text-center mb-8" data-axis="y">Our Journey</h3>
+                <h3 ref={el => titleRef.current[1] = el} data-axis="y" className="text-2xl font-semibold text-center mb-8">Our Journey</h3>
                 <div className="
                     flex
                     flex-col

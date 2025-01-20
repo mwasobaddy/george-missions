@@ -30,7 +30,7 @@ const DonatePage = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-24">
+        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-24 overflow-x-hidden">
             <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">Donate Now</h2>
                 <h2 className="text-lg font-bold text-center text-gray-900 mb-2">Select Donation Method</h2>

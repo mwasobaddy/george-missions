@@ -15,7 +15,7 @@ const HeroSection = () => {
                 { opacity: 1, y: 0, duration: 1 }
             );
         } else {
-            console.error('Scripture element not found');
+            console.error('HeroSection element not found');
         }
     }, []);
 

@@ -4,6 +4,7 @@ import Navbar from './component/Navbar';
 import HomePage from './pages/HomePage';
 import DonatePage from './pages/DonatePage';
 import AboutPage from './pages/AboutPage';
+import GalleryPage from './pages/GalleryPage';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           {/* <Route path="/" element={<HomePage />} /> */}
         </Routes>
       </Router>
