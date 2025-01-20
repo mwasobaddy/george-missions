@@ -40,7 +40,7 @@ const DonationHighlights = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <div className="bg-orange-600 p-8 rounded-lg text-center shadow-lg">
+                    <a href="/donate" className="bg-orange-600 p-8 rounded-lg text-center shadow-lg">
                         <div className="flex flex-col items-center mb-4">
                             <Plus className="w-12 h-12 text-gray-50 border border-dashed border-gray-50 rounded-2xl" />
                             <div className="text-3xl font-bold text-gray-50">Enter Custom Amount</div>
@@ -52,7 +52,7 @@ const DonationHighlights = () => {
                         <button className="mt-6 w-fit bg-gray-50 text-orange-600 px-6 py-2 rounded-full hover:bg-gray-100">
                             Donate Now
                         </button>
-                    </div>
+                    </a>
                     {[
                         { amount: "25", description: "Provides Food and Biles for a family" },
                         { amount: "50", description: "Funds missionary training" },
@@ -66,9 +66,9 @@ const DonationHighlights = () => {
                             </div>
                             <div className="text-3xl font-bold text-orange-600">${item.amount}</div>
                             <p className="mt-2 text-gray-600">{item.description}</p>
-                            <button className="mt-6 w-fit bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
+                            <a href="/donate" className="mt-6 w-fit bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
                                 Donate Now
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>
