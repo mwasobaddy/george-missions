@@ -35,11 +35,17 @@ import IMG_28 from '../assets/img/IMG_28.webp';
 import IMG_29 from '../assets/img/IMG_29.webp';
 import IMG_30 from '../assets/img/IMG_30.webp';
 import IMG_31 from '../assets/img/IMG_31.webp';
+import IMG_32 from '../assets/img/IMG_32.webp';
+import IMG_33 from '../assets/img/IMG_33.webp';
+import IMG_34 from '../assets/img/IMG_34.webp';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
+    { src: IMG_34, alt: "Image 1", category: "events" },
+    { src: IMG_33, alt: "Image 1", category: "events" },
     { src: IMG_4, alt: "Image 4", category: "events" },
     { src: IMG_12, alt: "Image 12", category: "events" },
     { src: IMG_14, alt: "Image 14", category: "events" },
@@ -53,6 +59,7 @@ const images = [
     { src: IMG_16, alt: "Image 16", category: "landscapes" },
     { src: IMG_18, alt: "Image 18", category: "landscapes" },
     { src: IMG_30, alt: "Image 30", category: "landscapes" },
+    { src: IMG_32, alt: "Image 32", category: "portraits" },
     { src: IMG_2, alt: "Image 2", category: "portraits" },
     { src: IMG_6, alt: "Image 6", category: "portraits" },
     { src: IMG_7, alt: "Image 7", category: "portraits" },
