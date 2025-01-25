@@ -39,9 +39,9 @@ const MissionOverview = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {[
-                        { icon: <Globe className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={12} duration={15} />+</>, label: "Countries Served" },
+                        { icon: <Globe className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={5} duration={15} />+</>, label: "Countries Served" },
                         { icon: <Users className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={10000} duration={15} />+</>, label: "Lives Impacted" },
-                        { icon: <Heart className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={50} duration={15} />+</>, label: "Active Projects" },
+                        { icon: <Heart className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={10} duration={15} />+</>, label: "Active Projects" },
                         { icon: <Book className="w-8 h-8 text-orange-600" />, stat: <><CountUp end={1000} duration={15} />+</>, label: "Bibles Distributed" }
                     ].map((item, index) => (
                         <div key={index} className="text-center p-6 bg-orange-50 rounded-lg">
