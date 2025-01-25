@@ -1,13 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ChevronRight } from 'lucide-react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import SwiperCore from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import image1 from '../assets/img/George_Dedicating_People_To_God.jpg';
 import image2 from '../assets/img/George_Teaching_Children_The_Importance_Of_Virtues_And_Values.jpg';
 import image3 from '../assets/img/George_Taking_Hope_To_The_Elderly.jpg';
 import image4 from '../assets/img/Celebrations_After_A_Fundraising_Function_In_The_Community.jpg';
 import image5 from '../assets/img/George_With_Friends.jpg';
+
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const updates = [
     {
@@ -55,36 +59,38 @@ const LatestUpdates = () => {
         const slides = [];
         for (let i = 0; i < updates.length; i += 2) {
             slides.push(
-                <div key={i} className="flex flex-col w-full mb-8 md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-                    {updates[i] && (
-                        <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full md:w-1/2">
-                            <div className="h-[50vh]">
-                                <img src={updates[i].image} alt={updates[i].title} className="h-full w-full object-cover" />
+                <SwiperSlide key={i}>
+                    <div className="flex flex-col w-full mb-8 md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                        {updates[i] && (
+                            <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full md:w-1/2">
+                                <div className="h-[50vh]">
+                                    <img src={updates[i].image} alt={updates[i].title} className="h-full w-full object-cover" />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-semibold mb-2">{updates[i].title}</h3>
+                                    <p className="text-gray-600 mb-4 text-left">{updates[i].content}</p>
+                                    <a href="/about" className="text-orange-600 font-semibold flex items-center">
+                                        Know More About Us <ChevronRight className="ml-1 w-4 h-4" />
+                                    </a>
+                                </div>
                             </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2">{updates[i].title}</h3>
-                                <p className="text-gray-600 mb-4 text-left">{updates[i].content}</p>
-                                <button className="text-orange-600 font-semibold flex items-center">
-                                    Read More <ChevronRight className="ml-1 w-4 h-4" />
-                                </button>
+                        )}
+                        {updates[i + 1] && (
+                            <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full md:w-1/2">
+                                <div className="h-[50vh]">
+                                    <img src={updates[i + 1].image} alt={updates[i + 1].title} className="h-full w-full object-cover" />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-semibold mb-2">{updates[i + 1].title}</h3>
+                                    <p className="text-gray-600 mb-4 text-left">{updates[i + 1].content}</p>
+                                    <button className="text-orange-600 font-semibold flex items-center">
+                                        Read More <ChevronRight className="ml-1 w-4 h-4" />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    )}
-                    {updates[i + 1] && (
-                        <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full md:w-1/2">
-                            <div className="h-[50vh]">
-                                <img src={updates[i + 1].image} alt={updates[i + 1].title} className="h-full w-full object-cover" />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2">{updates[i + 1].title}</h3>
-                                <p className="text-gray-600 mb-4 text-left">{updates[i + 1].content}</p>
-                                <button className="text-orange-600 font-semibold flex items-center">
-                                    Read More <ChevronRight className="ml-1 w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                </div>
+                        )}
+                    </div>
+                </SwiperSlide>
             );
         }
         return slides;
@@ -94,16 +100,23 @@ const LatestUpdates = () => {
         <div ref={updatesRef} id="updates" className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-center mb-16 after">
-                    <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
-                        <span class="relative text-white">Latest</span>
+                    <span className="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-600 relative inline-block">
+                        <span className="relative text-white">Latest</span>
                     </span>
-                    <span class="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gray-600 relative inline-block">
-                        <span class="relative text-white">Updates</span>
+                    <span className="px-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gray-600 relative inline-block">
+                        <span className="relative text-white">Updates</span>
                     </span>
                 </h2>
-                <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay interval={10000}>
+                <Swiper
+                    modules={[Autoplay, Navigation, Pagination]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 10000 }}
+                >
                     {renderSlides()}
-                </Carousel>
+                </Swiper>
             </div>
         </div>
     );
