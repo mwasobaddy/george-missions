@@ -60,13 +60,13 @@ const DonationHighlights = () => {
                         { amount: "150", description: "Sponsor a child's education in a developing country" },
                         { amount: "250", description: "Support the construction of a community center" },
                     ].map((item, index) => (
-                        <div key={index} className="bg-white p-8 rounded-lg text-center shadow-lg">
+                        <div key={index} className="bg-white p-8 rounded-lg text-center shadow-lg flex flex-col">
                             <div className="flex justify-center mb-4">
                                 <Gift className="w-8 h-8 text-orange-600" />
                             </div>
                             <div className="text-3xl font-bold text-orange-600">${item.amount}</div>
-                            <p className="mt-2 text-gray-600">{item.description}</p>
-                            <a href="/donate" className="mt-6 w-fit bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
+                            <p className="mt-2 text-gray-600 flex-1">{item.description}</p>
+                            <a href="/donate" className="self-center mt-6 w-fit bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">
                                 Donate Now
                             </a>
                         </div>
