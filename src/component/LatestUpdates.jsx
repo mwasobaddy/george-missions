@@ -84,7 +84,7 @@ const LatestUpdates = () => {
                                     <h3 className="text-xl font-semibold mb-2">{updates[i + 1].title}</h3>
                                     <p className="text-gray-600 mb-4 text-left">{updates[i + 1].content}</p>
                                     <button className="text-orange-600 font-semibold flex items-center">
-                                        Read More <ChevronRight className="ml-1 w-4 h-4" />
+                                        Know More About Us <ChevronRight className="ml-1 w-4 h-4" />
                                     </button>
                                 </div>
                             </div>
