@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import gsap, { Bounce } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
@@ -77,6 +78,36 @@ const ContactUs = () => {
         return () => observer.disconnect(); // Cleanup observer on unmount
     }, []);
 
+
+
+
+
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('/api/send-email', formData);
+            alert('Email sent successfully!');
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Failed to send email.');
+        }
+    };
+
     return (
         <section className="mb-16">
             <h2 ref={el => titleRef.current[0] = el} data-axis="y" className="text-3xl font-bold text-center mb-8 after">
@@ -90,18 +121,42 @@ const ContactUs = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-semibold mb-4">Contact Form</h3>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div ref={el => titleRef.current[1] = el} data-axis="y" className="mb-4">
                             <label className="block text-gray-600 mb-2" htmlFor="name">Name</label>
-                            <input className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200" type="text" id="name" name="name" required />
+                            <input
+                                className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200"
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
                         </div>
                         <div ref={el => paragraphRef.current[2] = el} data-axis="x" className="mb-4">
                             <label className="block text-gray-600 mb-2" htmlFor="email">Email</label>
-                            <input className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200" type="email" id="email" name="email" required />
+                            <input
+                                className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200"
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
                         </div>
                         <div ref={el => titleRef.current[2] = el} data-axis="y" className="mb-4">
                             <label className="block text-gray-600 mb-2" htmlFor="message">Message</label>
-                            <textarea className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200" id="message" name="message" rows="4" required></textarea>
+                            <textarea
+                                className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:border-orange-600 focus:ring focus:ring-orange-200 transition duration-200"
+                                id="message"
+                                name="message" 
+                                rows="4"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                            ></textarea>
                         </div>
                         <button ref={el => paragraphRef.current[3] = el} data-axis="x" className="px-4 py-2 bg-orange-600 text-white rounded-lg flex items-center justify-center hover:bg-orange-700 transition duration-200" type="submit">
                             <Send className="mr-2" /> Send Message
