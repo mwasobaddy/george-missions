@@ -16,6 +16,15 @@ const DonatePage = () => {
         }
     }, [selectedMethod]);
 
+    const handleAmountChange = (e) => {
+        const value = e.target.value;
+        if (!isNaN(value) && value > 0) {
+            setAmount(Number(value));
+        } else {
+            setAmount('');
+        }
+    };
+
     const renderContent = () => {
         switch (selectedMethod) {
             case 'paypal':
@@ -65,7 +74,7 @@ const DonatePage = () => {
                             className="px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-600 transition-colors duration-300" 
                             placeholder="Custom Amount" 
                             value={amount} 
-                            onChange={(e) => setAmount(Number(e.target.value))}
+                            onChange={handleAmountChange}
                         />
                     </div>
                 </div>
