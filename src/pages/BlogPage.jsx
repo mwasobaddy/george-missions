@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import backgroundImage from '../assets/hero-background.webp';
+import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -22,51 +23,26 @@ const BlogPage = () => {
   }, []);
 
   useEffect(() => {
-    // This would be replaced with your actual API call
+    // Load blog posts from localStorage (created by admin)
     const fetchPosts = async () => {
       try {
-        // Simulated API call
-        const mockPosts = [
-          {
-            id: 1,
-            title: "Mission Success Story: Transforming Lives in Rural Kenya",
-            excerpt: "Read about how our mission work has impacted communities in rural Kenya through education and healthcare initiatives.",
-            image: "/images/blog/mission-success.jpg",
-            date: "2024-04-29",
-            category: "Success Stories",
-            readTime: "5 min read"
-          },
-          {
-            id: 2,
-            title: "New School Building Project Update",
-            excerpt: "Follow the progress of our latest school construction project in the remote villages of Kenya.",
-            image: "/images/blog/school-project.jpg",
-            date: "2024-04-25",
-            category: "Project Updates",
-            readTime: "3 min read"
-          },
-          {
-            id: 3,
-            title: "Volunteer Spotlight: Meet Our Team",
-            excerpt: "Get to know the dedicated volunteers who make our mission work possible every day.",
-            image: "/images/blog/volunteer-spotlight.jpg",
-            date: "2024-04-20",
-            category: "Team Stories",
-            readTime: "4 min read"
-          }
-        ];
-        setPosts(mockPosts);
+        const stored = localStorage.getItem('blogPosts');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          setPosts(parsed.posts || []);
+        } else {
+          setPosts([]);
+        }
         setLoading(false);
       } catch (error) {
         console.error('Error fetching blog posts:', error);
         setLoading(false);
       }
     };
-
     fetchPosts();
   }, []);
 
-  const categories = ['all', 'Success Stories', 'Project Updates', 'Team Stories'];
+  const categories = ['all', 'Success Stories', 'Project Updates', 'Team Stories', 'Announcements'];
 
   return (
     <div className="min-h-screen">
@@ -162,12 +138,15 @@ const BlogPage = () => {
                     <p className="text-gray-600 mb-4">{post.excerpt}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-500">{post.date}</span>
-                      <button className="text-orange-600 hover:text-orange-800 font-medium flex items-center group">
+                      <Link
+                        to={`/blog/${post.id}`}
+                        className="text-orange-600 hover:text-orange-800 font-medium flex items-center group"
+                      >
                         Read More
                         <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </motion.article>

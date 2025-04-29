@@ -4,7 +4,8 @@ import Navbar from './component/Navbar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
-import Blog from './pages/Blog';
+import Blog from './pages/BlogPage';
+import BlogDetail from './pages/BlogDetail';
 import DonatePage from './pages/DonatePage';
 import AdminBlog from './pages/AdminBlog';
 import Login from './pages/Login';
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/donate" element={<DonatePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/blog" element={<AdminBlog />} />

@@ -6,6 +6,13 @@ import LoginAnimation from '../assets/img/LoginAnimation.webp';
 const IMAGE_URL = LoginAnimation;
 const BRAND_ORANGE = '#f97316';
 
+const CATEGORY_OPTIONS = [
+  'Success Stories',
+  'Project Update',
+  'Team Stories',
+  'Announcements',
+];
+
 const AdminBlog = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState(blogPosts.posts);
@@ -25,6 +32,7 @@ const AdminBlog = () => {
     password: ''
   });
   const [error, setError] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
     const auth = localStorage.getItem('isAdmin');
@@ -55,6 +63,39 @@ const AdminBlog = () => {
     setIsAuthenticated(false);
     navigate('/admin/blog');
   };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setNewPost(prev => ({ ...prev, image: reader.result }));
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleImageDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setNewPost(prev => ({ ...prev, image: reader.result }));
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleImageDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    setImagePreview(newPost.image || '');
+  }, [newPost.image]);
 
   if (!isAuthenticated) {
     return (
@@ -221,26 +262,39 @@ const AdminBlog = () => {
           
           <div>
             <label className="block text-gray-700 mb-2">Category</label>
-            <input
-              type="text"
+            <select
               name="category"
               value={newPost.category}
               onChange={handlePostInputChange}
               className="w-full p-2 border rounded"
               required
-            />
+            >
+              <option value="" disabled>Select a category</option>
+              {CATEGORY_OPTIONS.map(option => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
           </div>
           
           <div>
-            <label className="block text-gray-700 mb-2">Image URL</label>
-            <input
-              type="text"
-              name="image"
-              value={newPost.image}
-              onChange={handlePostInputChange}
-              className="w-full p-2 border rounded"
-              required
-            />
+            <label className="block text-gray-700 mb-2">Image</label>
+            <div
+              className="w-full p-2 border rounded flex flex-col items-center justify-center text-gray-500 bg-gray-50 cursor-pointer"
+              onDrop={handleImageDrop}
+              onDragOver={handleImageDragOver}
+              style={{ minHeight: 120 }}
+            >
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="mb-2"
+              />
+              <span>Drag & drop or click to upload</span>
+              {imagePreview && (
+                <img src={imagePreview} alt="Preview" className="mt-2 max-h-32 rounded shadow" />
+              )}
+            </div>
           </div>
         </div>
         
