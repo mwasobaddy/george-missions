@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Welcome to George's Mission Blog",
+      "content": "This is our first blog post. We're excited to share our journey with you!",
+      "author": "George",
+      "date": "2024-03-20",
+      "category": "Announcements",
+      "image": "/images/blog/welcome.jpg",
+      "excerpt": "Join us as we begin our journey of sharing stories and updates from George's Mission."
+    }
+  ]
+} 
